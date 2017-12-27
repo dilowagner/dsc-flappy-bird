@@ -2,14 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour 
 {
 	public static GameManager instance = null;
 	public GameObject gameOverText;
 	public bool gameOver = false;
-
+	public Text scoreText;
 	public float scrollSpeed = -1.5f;
+
+	private int score = 0;
 
 	// Use this for initialization
 	void Awake () 
@@ -27,6 +30,15 @@ public class GameManager : MonoBehaviour
 		{
 			SceneManager.LoadScene (SceneManager.GetActiveScene().buildIndex);
 		}	
+	}
+
+	public void BirdScored()
+	{
+		if (gameOver)
+			return;
+
+		score++;
+		scoreText.text = "Pontos: " + score.ToString();
 	}
 
 	public void BirdDied()
