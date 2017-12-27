@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
 	public GameObject gameOverText;
 	public bool gameOver = false;
 
+	public float scrollSpeed = -1.5f;
+
 	// Use this for initialization
 	void Awake () 
 	{
