@@ -11,6 +11,8 @@ public class Bird : MonoBehaviour
 
 	private Animator anim;
 
+	public AudioClip flapSound;
+
 	// Use this for initialization
 	void Start () 
 	{
@@ -31,6 +33,7 @@ public class Bird : MonoBehaviour
 				rg2D.AddForce (new Vector2(0, upForce));
 
 				anim.SetTrigger ("Flap");
+				SoundManager.instance.PlaySingle (flapSound);
 			}
 		}
 	}

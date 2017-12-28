@@ -14,6 +14,9 @@ public class GameManager : MonoBehaviour
 
 	private int score = 0;
 
+	public AudioClip gameOverSound;
+	public AudioClip scoreSound;
+
 	// Use this for initialization
 	void Awake () 
 	{
@@ -41,12 +44,14 @@ public class GameManager : MonoBehaviour
 		IncreaseSpeed ();
 		
 		scoreText.text = "Pontos: " + score.ToString();
+		SoundManager.instance.PlaySingle (scoreSound);
 	}
 
 	public void BirdDied()
 	{
 		gameOverText.SetActive (true);
 		gameOver = true;
+		SoundManager.instance.PlaySingle (gameOverSound);
 	}
 
 	public void IncreaseSpeed()
