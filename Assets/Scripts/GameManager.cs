@@ -38,6 +38,8 @@ public class GameManager : MonoBehaviour
 			return;
 
 		score++;
+		IncreaseSpeed ();
+		
 		scoreText.text = "Pontos: " + score.ToString();
 	}
 
@@ -45,5 +47,11 @@ public class GameManager : MonoBehaviour
 	{
 		gameOverText.SetActive (true);
 		gameOver = true;
+	}
+
+	public void IncreaseSpeed()
+	{
+		if ((score%5) == 0)
+			scrollSpeed += -0.5f; // increase speed
 	}
 }

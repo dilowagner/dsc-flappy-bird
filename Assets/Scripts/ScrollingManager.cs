@@ -9,12 +9,13 @@ public class ScrollingManager : MonoBehaviour
 	void Start () 
 	{
 		rg2D = GetComponent<Rigidbody2D> ();
-		rg2D.velocity = new Vector2 (GameManager.instance.scrollSpeed, 0);
+		//rg2D.velocity = new Vector2 (GameManager.instance.scrollSpeed, 0);
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{
+		rg2D.velocity = new Vector2 (GameManager.instance.scrollSpeed, 0);
 		if (GameManager.instance.gameOver == true) 
 		{
 			rg2D.velocity = Vector2.zero;

@@ -16,6 +16,8 @@ public class Bird : MonoBehaviour
 	{
 		rg2D = GetComponent<Rigidbody2D> ();	
 		anim = GetComponent<Animator> ();
+
+		rg2D.AddForce (new Vector2(0, upForce + 100f)); // initial jump
 	}
 	
 	// Update is called once per frame
